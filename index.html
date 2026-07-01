@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Trailmark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0F2A43;
+    --blue-deep: #1B4B8F;
+    --blue-bright: #3B82F6;
+    --blue-pale: #EAF2FF;
+    --ink: #16233A;
+    --slate: #5B6B7C;
+    --paper: #F7FAFC;
+    --line: #DCE6F2;
+    --accent: #1FBFA6;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.65;
+    font-size:16px;
+  }
+
+  h1,h2{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:var(--blue-deep); }
+
+  .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--slate);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--blue-deep) 55%, var(--blue-bright) 100%);
+    color:#fff;
+    padding:88px 24px 120px;
+  }
+
+  .hero-inner{
+    max-width:760px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+
+  .hero .meta{ color:rgba(255,255,255,0.7); }
+
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.1rem, 5vw, 3rem);
+    margin:14px 0 16px;
+  }
+
+  .hero p{
+    color:rgba(255,255,255,0.82);
+    max-width:52ch;
+    font-size:1.02rem;
+  }
+
+  /* Silhouette de montagne + trace GPX, écho du logo de l'app */
+  .peaks{
+    position:absolute;
+    bottom:-2px; left:0; right:0;
+    width:100%; height:140px;
+    z-index:1;
+  }
+
+  .trace{
+    position:absolute;
+    top:36%; left:0;
+    width:100%;
+    z-index:2;
+    opacity:0.9;
+  }
+
+  .dot{ animation: pulse 2.4s ease-in-out infinite; }
+  .dot.end{ animation-delay:1.2s; }
+  @keyframes pulse{
+    0%,100%{ r:4.5; opacity:1; }
+    50%{ r:7; opacity:0.5; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .dot{ animation:none; }
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .layout{
+    max-width:1040px;
+    margin:0 auto;
+    padding:56px 24px 100px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  nav.toc{
+    position:sticky;
+    top:32px;
+    font-size:0.88rem;
+  }
+
+  nav.toc .meta{ margin-bottom:14px; display:block; }
+
+  nav.toc ol{
+    list-style:none;
+    margin:0; padding:0;
+    border-left:2px solid var(--line);
+  }
+
+  nav.toc li{ margin:0; }
+
+  nav.toc a{
+    display:block;
+    padding:8px 0 8px 16px;
+    margin-left:-2px;
+    border-left:2px solid transparent;
+    color:var(--slate);
+    text-decoration:none;
+    transition:color .15s, border-color .15s;
+  }
+
+  nav.toc a:hover, nav.toc a:focus-visible{
+    color:var(--blue-deep);
+    border-left-color:var(--blue-bright);
+  }
+
+  main{ min-width:0; }
+
+  section{
+    padding:34px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-child{ border-bottom:none; }
+
+  section .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--blue-bright);
+    font-size:0.85rem;
+  }
+
+  section h2{
+    font-size:1.4rem;
+    margin:6px 0 14px;
+  }
+
+  section p, section li{
+    color:var(--ink);
+    font-size:0.98rem;
+  }
+
+  section ul{ padding-left:20px; }
+  section li{ margin-bottom:6px; }
+
+  .callout{
+    background:var(--blue-pale);
+    border:1px solid var(--line);
+    border-left:3px solid var(--blue-bright);
+    border-radius:6px;
+    padding:14px 18px;
+    font-size:0.92rem;
+    color:var(--slate);
+    margin-top:14px;
+  }
+
+  .callout strong{ color:var(--navy); }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:14px;
+    font-size:0.92rem;
+  }
+  th, td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  th{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--navy);
+    font-size:0.82rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+
+  footer{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 24px 60px;
+    color:var(--slate);
+    font-size:0.85rem;
+  }
+
+  code{
+    font-family:'IBM Plex Mono', monospace;
+    background:var(--blue-pale);
+    padding:1px 6px;
+    border-radius:4px;
+    font-size:0.85em;
+  }
+
+  @media (max-width:760px){
+    .layout{ grid-template-columns:1fr; }
+    nav.toc{ position:static; margin-bottom:24px; }
+    nav.toc ol{ display:flex; flex-wrap:wrap; gap:4px 18px; border-left:none; }
+    nav.toc a{ padding:4px 0; border-left:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="meta">Version 1.0 — En vigueur au <span id="effective-date"></span></span>
+    <h1>Politique de confidentialité</h1>
+    <p>Comment <strong>Trailmark</strong> collecte, utilise et protège les données liées à vos parcours, vos fichiers GPX et votre activité dans l'application.</p>
+  </div>
+
+  <svg class="peaks" viewBox="0 0 1200 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,140 0,90 180,30 340,80 520,15 720,75 900,25 1080,70 1200,40 1200,140" fill="rgba(255,255,255,0.06)"/>
+    <polygon points="0,140 0,110 220,55 400,95 600,50 800,100 1000,60 1200,90 1200,140" fill="rgba(255,255,255,0.10)"/>
+  </svg>
+
+  <svg class="trace" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M60,90 C220,20 320,20 420,55 C520,90 560,10 700,15 C840,20 900,95 1050,70" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 9"/>
+    <circle class="dot start" cx="60" cy="90" r="5" fill="#1FBFA6"/>
+    <circle class="dot end" cx="1050" cy="70" r="5" fill="#FF7A59"/>
+  </svg>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <span class="meta">Sommaire</span>
+    <ol>
+      <li><a href="#donnees">1. Données collectées</a></li>
+      <li><a href="#usage">2. Utilisation des données</a></li>
+      <li><a href="#localisation">3. Localisation & fichiers GPX</a></li>
+      <li><a href="#partage">4. Partage des données</a></li>
+      <li><a href="#conservation">5. Conservation</a></li>
+      <li><a href="#securite">6. Sécurité</a></li>
+      <li><a href="#droits">7. Vos droits (RGPD)</a></li>
+      <li><a href="#mineurs">8. Mineurs</a></li>
+      <li><a href="#modifications">9. Modifications</a></li>
+      <li><a href="#contact">10. Contact</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="donnees">
+      <span class="num">01</span>
+      <h2>Données collectées</h2>
+      <p>Selon votre usage de l'application, nous pouvons collecter :</p>
+      <table>
+        <thead>
+          <tr><th>Catégorie</th><th>Exemples</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Compte</td><td>Nom, adresse e-mail, mot de passe (chiffré)</td></tr>
+          <tr><td>Parcours</td><td>Fichiers GPX importés, tracés, points de départ/arrivée, dénivelé, distance</td></tr>
+          <tr><td>Localisation</td><td>Position GPS pendant l'enregistrement d'une sortie (si activé)</td></tr>
+          <tr><td>Activité physique</td><td>Durée, vitesse, allure — données de type santé/sport</td></tr>
+          <tr><td>Technique</td><td>Modèle d'appareil, version de l'OS, identifiants techniques, journaux d'erreurs</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>À personnaliser :</strong> ajustez ce tableau selon les données réellement collectées par votre app (ex. capteurs de fréquence cardiaque, connexion à des services tiers comme Strava, etc.).</div>
+    </section>
+
+    <section id="usage">
+      <span class="num">02</span>
+      <h2>Utilisation des données</h2>
+      <ul>
+        <li>Afficher vos parcours sur la carte et calculer les statistiques associées (distance, dénivelé, durée).</li>
+        <li>Sauvegarder et synchroniser votre historique de sorties entre vos appareils.</li>
+        <li>Améliorer la fiabilité de l'application (diagnostic de bugs, performance).</li>
+        <li>Vous envoyer des communications liées au service (mises à jour, sécurité du compte), si vous y avez consenti.</li>
+      </ul>
+      <p>Nous n'utilisons pas vos données pour de la publicité ciblée.</p>
+    </section>
+
+    <section id="localisation">
+      <span class="num">03</span>
+      <h2>Localisation & fichiers GPX</h2>
+      <p>Les fichiers GPX que vous importez ou enregistrez contiennent des coordonnées précises de vos déplacements. Ces données sont traitées comme des données de localisation sensibles :</p>
+      <ul>
+        <li>L'accès à la localisation en temps réel nécessite votre autorisation explicite via les réglages de votre appareil.</li>
+        <li>Vous pouvez désactiver le suivi GPS à tout moment dans les paramètres de l'application.</li>
+        <li>Les tracés importés restent sur votre appareil sauf si vous activez la sauvegarde en ligne.</li>
+      </ul>
+    </section>
+
+    <section id="partage">
+      <span class="num">04</span>
+      <h2>Partage des données</h2>
+      <p>Nous ne vendons jamais vos données personnelles. Elles peuvent être partagées uniquement dans les cas suivants :</p>
+      <ul>
+        <li>Avec des prestataires techniques (hébergement, envoi d'e-mails) liés par des obligations de confidentialité.</li>
+        <li>Si vous activez volontairement un partage de parcours avec d'autres utilisateurs ou services tiers.</li>
+        <li>Si la loi ou une autorité compétente l'exige.</li>
+      </ul>
+    </section>
+
+    <section id="conservation">
+      <span class="num">05</span>
+      <h2>Conservation des données</h2>
+      <p>Vos données sont conservées tant que votre compte est actif. En cas de suppression du compte, les données personnelles sont effacées sous <code>[délai à préciser, ex. 30 jours]</code>, sauf obligation légale de conservation plus longue.</p>
+    </section>
+
+    <section id="securite">
+      <span class="num">06</span>
+      <h2>Sécurité</h2>
+      <p>Des mesures techniques et organisationnelles raisonnables sont mises en œuvre pour protéger vos données (chiffrement en transit, accès restreint). Aucun système n'étant infaillible, nous vous invitons à utiliser un mot de passe robuste et unique.</p>
+    </section>
+
+    <section id="droits">
+      <span class="num">07</span>
+      <h2>Vos droits (RGPD)</h2>
+      <p>Si vous résidez dans l'Union européenne, vous disposez des droits suivants sur vos données personnelles :</p>
+      <ul>
+        <li>Droit d'accès et de rectification</li>
+        <li>Droit à l'effacement</li>
+        <li>Droit à la portabilité (export de vos parcours au format GPX)</li>
+        <li>Droit d'opposition et de limitation du traitement</li>
+        <li>Droit de retirer votre consentement à tout moment</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à l'adresse indiquée en section 10. Vous pouvez également introduire une réclamation auprès de la CNIL.</p>
+    </section>
+
+    <section id="mineurs">
+      <span class="num">08</span>
+      <h2>Mineurs</h2>
+      <p>L'application n'est pas destinée aux enfants de moins de 16 ans. Nous ne collectons pas sciemment de données concernant des mineurs sans le consentement d'un parent ou tuteur légal.</p>
+    </section>
+
+    <section id="modifications">
+      <span class="num">09</span>
+      <h2>Modifications de cette politique</h2>
+      <p>Cette politique peut être mise à jour périodiquement. Toute modification substantielle vous sera notifiée dans l'application ou par e-mail avant son entrée en vigueur.</p>
+    </section>
+
+    <section id="contact">
+      <span class="num">10</span>
+      <h2>Contact</h2>
+      <p>Pour toute question relative à cette politique de confidentialité ou à vos données personnelles :</p>
+      <p><strong>Turin Gary</strong><br>
+      E-mail : <a href="mailto:contact@trailmark-app.example">contact@turin-tech.fr</a><br>
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  © <span id="year"></span> Trailmark. Tous droits réservés.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('effective-date').textContent = new Date().toLocaleDateString('fr-FR', { year:'numeric', month:'long', day:'numeric' });
+</script>
+
+</body>
+</html>
